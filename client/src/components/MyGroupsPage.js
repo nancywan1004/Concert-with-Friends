@@ -24,6 +24,7 @@ export default function MyGroupsPage() {
             userService.getGroups(userData.data._id).then(async (userGroups) => {
                 for (const eventID of userGroups) {
                     const response = await fetch('https://app.ticketmaster.com/discovery/v2/events/' + eventID + '?apikey=' + API_KEY, {mode:'no-cors'})
+                    console.log(response.json())
                     const group = await response.json()
                     data.push(group)
                 }

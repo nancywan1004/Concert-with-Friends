@@ -90,7 +90,7 @@ export default function Navbar(props) {
 
 
   const getCurrentCity = async () => {
-    Geocoder.init("AIzaSyDaB9iZHEtafiTwgos1qZF0S6iKuW4UpIo");
+    Geocoder.init("AIzaSyDl9zfX4zYiXzadHoN6qsNW5IgCY2ri-WY");
     try {
       const position = await getCurrentLongLat();
       const currentLoc = {
