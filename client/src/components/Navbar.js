@@ -12,6 +12,8 @@ import { alertActions } from '../actions/alert.actions';
 import Geocoder from 'react-native-geocoding';
 import logo from '../images/logo.png'
 
+const BS_URL_KEY = process.env.REACT_APP_BS_URL_KEY || '';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1
@@ -90,7 +92,7 @@ export default function Navbar(props) {
 
 
   const getCurrentCity = async () => {
-    Geocoder.init("AIzaSyDl9zfX4zYiXzadHoN6qsNW5IgCY2ri-WY");
+    Geocoder.init(BS_URL_KEY);
     try {
       const position = await getCurrentLongLat();
       const currentLoc = {
