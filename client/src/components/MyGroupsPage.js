@@ -29,7 +29,7 @@ export default function MyGroupsPage() {
                 }
             }).then(_res => {
                 setGroups(data)
-            }).catch(e => {return console.warn(e)})
+            }).catch(e => console.warn(e))
         }
     }, []);
 
