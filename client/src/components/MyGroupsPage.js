@@ -23,13 +23,13 @@ export default function MyGroupsPage() {
         if (userData && userData.data && userData.data._id) {
             userService.getGroups(userData.data._id).then(async (userGroups) => {
                 for (const eventID of userGroups) {
-                    const response = await fetch('https://app.ticketmaster.com/discovery/v2/events/' + eventID + '?apikey=' + API_KEY)
+                    const response = await fetch('https://app.ticketmaster.com/discovery/v2/events/' + eventID + '?apikey=' + API_KEY, {mode:'no-cors'}).catch(e => console.warn(e))
                     const group = await response.json()
                     data.push(group)
                 }
             }).then(_res => {
                 setGroups(data)
-            })
+            }).catch(e => {return console.warn(e)})
         }
     }, []);
 
