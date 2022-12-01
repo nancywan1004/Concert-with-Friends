@@ -192,3 +192,4 @@ We plan to add on extra features that was not implemented in our stretch goal su
 - Password validation on Sign-up page
 - "From" and "To" date filters on search bar with date picker
 
+
